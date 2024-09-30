@@ -69,117 +69,123 @@
 </style>
 </head> 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const style = document.createElement('style');
-    style.innerHTML = `
-      #preloader-body, #preloader-html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-        background-color: #000000;
-        font-family: 'Laila', sans-serif;
-      }
+document.addEventListener('DOMContentLoaded', function () {
+  // Create the style for preloader and content
+  const style = document.createElement('style');
+  style.innerHTML = `
+    #preloader-body, #preloader-html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #000000;
+      font-family: 'Laila', sans-serif;
+    }
 
-      .preloader-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #000000;
-        color: #ffffff;
-        flex-direction: column;
-        text-align: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 9999;
-      }
+    .preloader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000000;
+      color: #ffffff;
+      flex-direction: column;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
 
-      .preloader-spinner {
-        border: 6px solid rgba(255, 255, 255, 0.2);
-        border-top: 6px solid #06d889;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: preloader-spin 1s linear infinite;
-      }
+    .preloader-spinner {
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      border-top: 6px solid #06d889;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: preloader-spin 1s linear infinite;
+    }
 
-      @keyframes preloader-spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
+    @keyframes preloader-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
-      .preloader-joke {
-        margin-top: 20px;
-        font-size: 1.4rem;
-        color: #06d889;
-      }
+    .preloader-joke {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      color: #06d889;
+    }
 
-      .preloader-emoji {
-        margin-top: 10px;
-        font-size: 3rem;
-        animation: preloader-bounce 1.5s infinite;
-      }
+    .preloader-emoji {
+      margin-top: 10px;
+      font-size: 3rem;
+      color: #06d889; /* Green color for emojis */
+      animation: preloader-bounce 1.5s infinite;
+    }
 
-      @keyframes preloader-bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-30px); }
-        60% { transform: translateY(-15px); }
-      }
+    @keyframes preloader-bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-30px); }
+      60% { transform: translateY(-15px); }
+    }
 
-      .preloader-punchline {
-        margin-top: 15px;
-        font-size: 1.7rem;
-        color: #ffffff;
-      }
+    .preloader-punchline {
+      margin-top: 15px;
+      font-size: 1.7rem;
+      color: #ffffff;
+    }
 
-      #main-content {
-        display: none;
-      }
+    #main-content {
+      display: none; /* Hide content initially */
+    }
 
-      .preloader-fade-out {
-        opacity: 0;
-        transition: opacity 0.8s ease-in-out;
-      }
-    `;
-    document.head.appendChild(style);
+    .preloader-fade-out {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+  `;
+  document.head.appendChild(style);
 
-    const preloaderContainer = document.createElement('div');
-    preloaderContainer.classList.add('preloader-container');
+  // Create the preloader container
+  const preloaderContainer = document.createElement('div');
+  preloaderContainer.classList.add('preloader-container');
 
-    const spinner = document.createElement('div');
-    spinner.classList.add('preloader-spinner');
+  const spinner = document.createElement('div');
+  spinner.classList.add('preloader-spinner');
 
-    const joke = document.createElement('div');
-    joke.classList.add('preloader-joke');
-    joke.innerText = 'Why do programmers like the dark mode?';
+  const joke = document.createElement('div');
+  joke.classList.add('preloader-joke');
+  joke.innerText = 'Why do programmers like the dark mode?';
 
-    const emoji = document.createElement('div');
-    emoji.classList.add('preloader-emoji');
-    emoji.innerText = '💡🐛';
+  const emoji = document.createElement('div');
+  emoji.classList.add('preloader-emoji');
+  emoji.innerText = '💡🐛'; // Emojis with the color filled
 
-    const punchline = document.createElement('div');
-    punchline.classList.add('preloader-punchline');
-    punchline.innerText = 'Because the light attracts bugs! 🐛';
+  const punchline = document.createElement('div');
+  punchline.classList.add('preloader-punchline');
+  punchline.innerText = 'Because the light attracts bugs! 🐛';
 
-    preloaderContainer.appendChild(spinner);
-    preloaderContainer.appendChild(joke);
-    preloaderContainer.appendChild(emoji);
-    preloaderContainer.appendChild(punchline);
+  preloaderContainer.appendChild(spinner);
+  preloaderContainer.appendChild(joke);
+  preloaderContainer.appendChild(emoji);
+  preloaderContainer.appendChild(punchline);
 
-    document.body.appendChild(preloaderContainer);
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        preloaderContainer.classList.add('preloader-fade-out');
-        setTimeout(() => {
-          preloaderContainer.style.display = 'none';
-          document.querySelector('#main-content').style.display = 'block';
-        }, 800);
-      }, 5000);
-    });
+  document.body.appendChild(preloaderContainer);
+
+  // On window load
+  window.addEventListener('load', function () {
+    // Adding 5 seconds delay after the content is loaded
+    setTimeout(function () {
+      preloaderContainer.classList.add('preloader-fade-out');
+      setTimeout(() => {
+        preloaderContainer.style.display = 'none'; // Hide preloader
+        document.querySelector('#main-content').style.display = 'block'; // Show content
+      }, 800); // Fading out duration
+    }, 5000); // 5 seconds delay
   });
+});
 </script>
  <script>
   "http"==window.location.href.substr(0,4)&&"/"!=window.location.href.slice(-1)&&window.location.replace(window.location.href+"/");
