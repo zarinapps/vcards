@@ -1,75 +1,18 @@
 <!DOCTYPE html><html lang="en" style="background-color: rgb(0, 0, 0);">
 <title>Anas Muhammad's Digital Business Card</title>
 <head>
-  <meta property="og:title" content="Muhammad Anas" />
-  <meta property="og:image" content="https://anas.zarin.solutions/assets/images/me2.png" />
-  <meta property="og:description" content="Sr. Software & Web Engineer" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/webp" href="https://zarinsolutions.com/assets/img/fav.webp"> 
-  <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.min.css">
-  
-  <style>  
-    #body {
-      font-family: 'Laila', sans-serif;
-    }
-  
-    input[type='range']::-moz-range-track {
-      background: none;
-    }
-  
-    input[type='range']::-moz-range-thumb {
-      -moz-appearance: none;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-      border: none;
-      background: #06d889;
-      z-index: 3;
-      cursor: pointer;
-    }
-  
-    input[type='range']::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-      border: none;
-      background: #06d889;
-      z-index: 3;
-      cursor: pointer;
-    }
-  
-    .closeBtnColor {
-      false;
-    }
-  
-    .topAction {
-      false;
-    }
-  
-    .action {
-      color: #fff;
-      filter: invert(1);
-    }
-  
-    .card {
-      false;
-    }
-  
-    .ziacard {
-      color: #fff !important;
-      padding-top: 20px;
-    }
-  
-    .text {
-      text-align: center;
-      line-height: 1.5;
-      color: #fff !important;
-    }
-
-    /* Preloader styles */
+<meta property="og:title" content="Muhammad Anas" />
+<meta property="og:image" content="https://anas.zarin.solutions/assets/images/me2.png" />
+<meta property="og:description" content="Sr. Software & Web Engineer" />
+<meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="icon" type="image/webp" href="https://zarinsolutions.com/assets/img/fav.webp"> 
+<link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.min.css">
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Create the style for preloader and content
+  const style = document.createElement('style');
+  style.innerHTML = `
     #preloader-body, #preloader-html {
       margin: 0;
       padding: 0;
@@ -142,53 +85,110 @@
       opacity: 0;
       transition: opacity 0.8s ease-in-out;
     }
-  </style>
+  `;
+  document.head.appendChild(style);
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Create preloader elements
-      const preloaderContainer = document.createElement('div');
-      preloaderContainer.classList.add('preloader-container');
+  // Create the preloader container
+  const preloaderContainer = document.createElement('div');
+  preloaderContainer.classList.add('preloader-container');
 
-      const spinner = document.createElement('div');
-      spinner.classList.add('preloader-spinner');
+  const spinner = document.createElement('div');
+  spinner.classList.add('preloader-spinner');
 
-      const joke = document.createElement('div');
-      joke.classList.add('preloader-joke');
-      joke.innerText = 'Why do programmers like the dark mode?';
+  const joke = document.createElement('div');
+  joke.classList.add('preloader-joke');
+  joke.innerText = 'Why do programmers like the dark mode?';
 
-      const emoji = document.createElement('div');
-      emoji.classList.add('preloader-emoji');
-      emoji.innerText = '💡🐛';
+  const emoji = document.createElement('div');
+  emoji.classList.add('preloader-emoji');
+  emoji.innerText = '💡🐛'; // Emojis with the color filled
 
-      const punchline = document.createElement('div');
-      punchline.classList.add('preloader-punchline');
-      punchline.innerText = 'Because the light attracts bugs! 🐛';
+  const punchline = document.createElement('div');
+  punchline.classList.add('preloader-punchline');
+  punchline.innerText = 'Because the light attracts bugs! 🐛';
 
-      preloaderContainer.appendChild(spinner);
-      preloaderContainer.appendChild(joke);
-      preloaderContainer.appendChild(emoji);
-      preloaderContainer.appendChild(punchline);
+  preloaderContainer.appendChild(spinner);
+  preloaderContainer.appendChild(joke);
+  preloaderContainer.appendChild(emoji);
+  preloaderContainer.appendChild(punchline);
 
-      document.body.appendChild(preloaderContainer);
+  document.body.appendChild(preloaderContainer);
 
-      // On window load
-      window.addEventListener('load', function () {
-        // Adding 5 seconds delay after content is loaded
-        setTimeout(function () {
-          preloaderContainer.classList.add('preloader-fade-out');
-          setTimeout(() => {
-            preloaderContainer.style.display = 'none'; // Hide preloader
-            document.querySelector('#main-content').style.display = 'block'; // Show content
-          }, 800); // Fading out duration
-        }, 5000); // 5 seconds delay
-      });
-    });
-  </script>
+  // On window load
+  window.addEventListener('load', function () {
+    // Adding 5 seconds delay after the content is loaded
+    setTimeout(function () {
+      preloaderContainer.classList.add('preloader-fade-out');
+      setTimeout(() => {
+        preloaderContainer.style.display = 'none'; // Hide preloader
+        document.querySelector('#main-content').style.display = 'block'; // Show content
+      }, 800); // Fading out duration
+    }, 5000); // 5 seconds delay
+  });
+});
+</script>
+<style>  
+  #body {
+    font-family: 'Laila', sans-serif;
+  }
   
-  <script>
-    "http" == window.location.href.substr(0, 4) && "/" != window.location.href.slice(-1) && window.location.replace(window.location.href + "/");
-  </script>
+  input[type='range']::-moz-range-track {
+    background: none;
+  }
+  
+  input[type='range']::-moz-range-thumb {
+    -moz-appearance: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    border: none;
+    background: #06d889;
+    z-index: 3;
+    cursor: pointer;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    border: none;
+    background: #06d889;
+    z-index: 3;
+    cursor: pointer;
+  }
+  
+  .closeBtnColor {
+    false;
+  }
+  
+  .topAction {
+    false;
+  }
+  
+  .action {
+    color: #fff;
+    filter: invert(1);
+  }
+  
+  .card {
+    false;
+  }
+  
+  .ziacard {
+    color: #fff !important;
+    padding-top: 20px;
+  }
+  
+  .text {
+    text-align: center;
+    line-height: 1.5;
+    color: #fff !important;
+  }
+</style>
+ <script>
+  "http"==window.location.href.substr(0,4)&&"/"!=window.location.href.slice(-1)&&window.location.replace(window.location.href+"/");
+ </script>
 </head>
 <body id="body"><div id="modal" style="background-color: rgb(0, 0, 0); visibility: hidden; top: 2rem; opacity: 0;"><div id="closeModal"><a id="close" class="closeBtnColor"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg></div></a></div> <div id="modalView"><div id="keyInfo"><p class="text">
                 Use my public key to send me encrypted messages
