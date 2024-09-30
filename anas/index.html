@@ -5,80 +5,19 @@
   <meta property="og:image" content="https://anas.zarin.solutions/assets/images/me2.png" />
   <meta property="og:description" content="Sr. Software & Web Engineer" />
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/webp" href="https://zarinsolutions.com/assets/img/fav.webp"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/webp" href="https://zarinsolutions.com/assets/img/fav.webp">
   <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.min.css">
-  
-  <style>  
-    #body {
-      font-family: 'Laila', sans-serif;
-    }
-  
-    input[type='range']::-moz-range-track {
-      background: none;
-    }
-  
-    input[type='range']::-moz-range-thumb {
-      -moz-appearance: none;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-      border: none;
-      background: #06d889;
-      z-index: 3;
-      cursor: pointer;
-    }
-  
-    input[type='range']::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-      border: none;
-      background: #06d889;
-      z-index: 3;
-      cursor: pointer;
-    }
-  
-    .closeBtnColor {
-      false;
-    }
-  
-    .topAction {
-      false;
-    }
-  
-    .action {
-      color: #fff;
-      filter: invert(1);
-    }
-  
-    .card {
-      false;
-    }
-  
-    .ziacard {
-      color: #fff !important;
-      padding-top: 20px;
-    }
-  
-    .text {
-      text-align: center;
-      line-height: 1.5;
-      color: #fff !important;
+
+  <!-- Immediate Styles to ensure preloader visibility -->
+  <style>
+    /* Hide content initially */
+    body {
+      visibility: hidden;
+      overflow: hidden;
     }
 
     /* Preloader styles */
-    #preloader-body, #preloader-html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background-color: #000000;
-      font-family: 'Laila', sans-serif;
-    }
-
     .preloader-container {
       display: flex;
       justify-content: center;
@@ -118,7 +57,7 @@
     .preloader-emoji {
       margin-top: 10px;
       font-size: 3rem;
-      color: #06d889; /* Green color for emojis */
+      color: #06d889;
       animation: preloader-bounce 1.5s infinite;
     }
 
@@ -134,19 +73,14 @@
       color: #ffffff;
     }
 
-    #main-content {
-      display: none; /* Hide content initially */
-    }
-
+    /* Fading out preloader */
     .preloader-fade-out {
       opacity: 0;
       transition: opacity 0.8s ease-in-out;
     }
   </style>
-
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Create preloader elements
       const preloaderContainer = document.createElement('div');
       preloaderContainer.classList.add('preloader-container');
 
@@ -172,16 +106,15 @@
 
       document.body.appendChild(preloaderContainer);
 
-      // On window load
       window.addEventListener('load', function () {
-        // Adding 5 seconds delay after content is loaded
         setTimeout(function () {
           preloaderContainer.classList.add('preloader-fade-out');
           setTimeout(() => {
-            preloaderContainer.style.display = 'none'; // Hide preloader
-            document.querySelector('#main-content').style.display = 'block'; // Show content
-          }, 800); // Fading out duration
-        }, 5000); // 5 seconds delay
+            preloaderContainer.style.display = 'none'; 
+            document.body.style.visibility = 'visible'; 
+            document.body.style.overflow = 'auto';
+          }, 800);
+        }, 5000); 
       });
     });
   </script>
