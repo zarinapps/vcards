@@ -3,48 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Digital Card Awareness - English</title>
+    <title>Zarin Solutions Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Laila', serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, p {
+            color: #06d889;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq {
+            border: 1px solid #06d889;
+            margin: 10px 0;
+            border-radius: 8px;
+            padding: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .faq:hover {
+            background: rgba(6, 216, 137, 0.1);
+        }
+
+        .faq h2 {
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #06d889;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .green-border {
+            border: 1px solid #06d889;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
-        <header>
-            <h1>Welcome to Zarin Solutions Inc!</h1>
-            <h2>Digital Card Service</h2>
-        </header>
+        <div class="logo">
+            <img src="https://vc.zarin.solutions/zainlogolow.png" alt="Zarin Solutions" />
+        </div>
 
-        <main>
-            <section>
-                <h3>Why Go Digital?</h3>
-                <p>In a world that’s rapidly moving towards digital solutions, it’s time to embrace the change! Physical cards contribute to waste and harm the environment. By switching to a digital card, you not only enhance your professionalism but also help reduce plastic waste. 🌍</p>
-                <p>Companies are phasing out paper invoices and minimizing plastic use. Why not join this movement and create a sustainable future for our coming generations?</p>
-                <button onclick="window.open('https://vc.zarin.solutions/anas', '_blank')">See Demo Digital Card</button>
-            </section>
+        <h1>Welcome to Zarin Solutions Inc! 🎉</h1>
 
-            <section>
-                <h3>FAQs</h3>
-                <ul>
-                    <li><strong>What is a digital card?</strong> A digital card is a modern alternative to traditional physical cards, offering convenience and eco-friendliness.</li>
-                    <li><strong>How can I create my own digital card?</strong> Visit our demo page and follow the simple instructions to get started!</li>
-                </ul>
-            </section>
+        <p>The world is going digital, and it's time for you to join the change. Every day, we use old methods like physical business cards. But have you ever thought about how these methods affect your professional identity? Physical cards are now outdated and not very useful. 😔</p>
 
-            <section>
-                <h3>Partners Committed to Lifetime Digital Cards</h3>
-                <div class="partners-logos">
-                    <img src="google-cloud-logo.png" alt="Google Cloud">
-                    <img src="zarin-solutions-logo.png" alt="Zarin Solutions">
-                    <img src="oracle-cloud-logo.png" alt="Oracle Cloud">
-                </div>
-            </section>
-        </main>
+        <p>These cards can get lost, damaged, or just forgotten. Do you really want your identity to rely on a small piece of plastic or paper? It doesn’t leave a good impression. Plus, it harms the environment. 🌍</p>
 
-        <footer>
-            <p>© 2024 Zarin Solutions Inc. All rights reserved.</p>
-        </footer>
+        <h2>Big Companies and Environmental Protection:</h2>
+
+        <p>Big companies have already stopped using paper invoices to reduce waste. Even ATMs charge extra for receipts to reduce paper use. It's our responsibility to leave a cleaner, smarter environment for future generations.</p>
+
+        <h2>Benefits of Digital Cards:</h2>
+
+        <div class="faq">
+            <h2>Always Available <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>Your digital card is always online, just a click or QR code scan away.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Eco-friendly <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>By using a digital card, you're helping protect the environment.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Easy Sharing <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>Your digital card can be easily shared via a QR code. 📲</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Lifetime Free Hosting <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>With the help of Google Cloud, Oracle Cloud, and Zarin Cloud, you get lifetime free hosting, making your card always accessible.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Durable and Safe <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>Your digital card can never get lost, damaged, or washed away! 😅</p>
+            </div>
+        </div>
+
+        <h2>Our Mission:</h2>
+
+        <p>At Zarin Solutions Inc., our goal is to make the world, especially Pakistan, more digital and eco-friendly. We not only provide lifetime free hosting but also cover 50% of the cost of creating your digital card so that everyone can easily benefit from this modern service.</p>
+
+        <h2>How to Use Your Digital Card?</h2>
+
+        <p>You will receive a unique link and a QR code, which you can easily share with clients or anyone. They can scan the QR code and instantly access your professional information.</p>
+
+        <h2>FAQs:</h2>
+
+        <div class="faq">
+            <h2>What is a digital card? <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>A digital card shows your professional details via a link or QR code, which can be shared anywhere.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>What is lifetime free hosting? <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>It's free hosting for your digital card, supported by Google Cloud, Oracle Cloud, and Zarin Cloud, making your card always available online.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Why use a digital card instead of a physical one? <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>A digital card never gets lost, damaged, or harms the environment.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Can I update my digital card myself? <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>No, you cannot update your digital card yourself. Our expert team handles updates because the card is created using coding, and any changes require coding.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Does the QR code work everywhere? <span class="faq-toggle">▼</span></h2>
+            <div class="faq-content">
+                <p>Yes, the QR code works everywhere and provides instant access to your card.</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://vc.zarin.solutions/anas" class="btn">View Demo</a>
+            <a href="https://wa.me/+923051766663?text=I%20would%20like%20to%20place%20an%20order%20for%20a%20digital%20card" class="btn">Order Now</a>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.faq h2').forEach((item) => {
+            item.addEventListener('click', () => {
+                const content = item.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = toggle.textContent === '▼' ? '▲' : '▼';
+            });
+        });
+    </script>
+
 </body>
 </html>

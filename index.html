@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Card Awareness</title>
-    <link href="https://fonts.googleapis.com/css2?family=Laila&display=swap" rel="stylesheet">
     <style>
         html, body {
             margin: 0;
@@ -12,11 +11,10 @@
             height: 100%;
             background-color: #000000; /* Changed to pure black */
             color: #ffffff;
-            font-family: 'Laila', sans-serif;
+            font-family: sans-serif; /* Using system default font */
             overflow: hidden;
         }
 
-        /* Particle canvas styling */
         #particleCanvas {
             position: absolute; /* Absolute to overlay correctly */
             top: 0;
@@ -26,37 +24,50 @@
             z-index: 2; /* Above background */
         }
 
-        /* Foreground image styling */
         .foreground {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            background-image: url('https://vc.zarin.solutions/background.webp'); /* Updated background image URL */
+            background-image: url('https://vc.zarin.solutions/background.webp');
             background-repeat: no-repeat;
             background-position: bottom center;
             background-size: 100% auto;
             z-index: 3; /* Above particles */
         }
 
-        /* Center container styling */
         .center-container {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Align to the top */
-            align-items: center; /* Center horizontally */
-            height: 100%; /* Full height of the page */
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
             position: relative;
-            z-index: 4; /* Highest z-index for content */
-            margin-top: 30px; /* Add a 30px gap from the top */
+            z-index: 4;
+            margin-top: 30px;
         }
 
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
-            color: #06d889; /* Green heading */
+            color: #06d889;
+            min-height: 3.5rem; /* Set a minimum height for the heading to prevent layout shift */
+            line-height: 1.2; /* Prevent breaking into two lines */
+            white-space: nowrap; /* Prevent wrapping */
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Reduce font size on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem; /* Further reduce font size for very small screens */
+            }
         }
 
         .language-buttons {
@@ -74,13 +85,13 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            width: 150px; /* Fixed width for consistency */
         }
 
         button:hover {
             background-color: #04b06e;
         }
 
-        /* Preloader styling */
         .preloader {
             position: fixed;
             top: 0;
@@ -90,8 +101,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000000; /* Preloader background */
-            z-index: 9999; /* Always on top */
+            background-color: #000000;
+            z-index: 9999;
         }
 
         .loader {
@@ -108,7 +119,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Logo styling */
         .logo {
             margin-bottom: 20px; /* Space between logo and heading */
             z-index: 5; /* Ensure logo is above other elements */
@@ -127,7 +137,7 @@
     <div class="center-container">
         <!-- Logo -->
         <img src="https://vc.zarin.solutions/zainlogolow.png" alt="Zarin Solutions Logo" class="logo" width="200" /> <!-- Logo image -->
-        <h1 id="dynamic-heading">ڈیجیٹل کارڈ کیا ہے؟</h1> <!-- Updated Heading in Urdu -->
+        <h1 id="dynamic-heading">ڈیجیٹل کارڈ کیا ہے؟</h1> <!-- Heading in Urdu -->
         <div class="language-buttons">
             <button onclick="window.location.href='en.html'">English</button>
             <button onclick="window.location.href='ur.html'">اردو</button>
@@ -135,44 +145,40 @@
     </div>
 
     <script>
-        // Hide preloader after a delay
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none'; // Hide preloader after loading
+            preloader.style.display = 'none';
         });
 
-        // Auto-switch heading every 5 seconds
         const headings = [
-            "ڈیجیٹل کارڈ کیا ہے؟", // Urdu Question
-            "What is a Digital Card?" // English Question
+            "ڈیجیٹل کارڈ کیا ہے؟", // Urdu
+            "What is a Digital Card?" // English
         ];
         let currentIndex = 0;
 
         setInterval(() => {
             currentIndex = (currentIndex + 1) % headings.length;
             const headingElement = document.getElementById('dynamic-heading');
-            headingElement.style.opacity = 0; // Fade out
+            headingElement.style.opacity = 0;
             setTimeout(() => {
                 headingElement.innerText = headings[currentIndex];
-                headingElement.style.opacity = 1; // Fade in
+                headingElement.style.opacity = 1;
             }, 500);
-        }, 5000); // Change every 5 seconds
+        }, 5000);
 
-        // Particle effect code
         let particles = [];
-        let nParticles = 500; // Number of particles
+        let nParticles = 500;
 
         function setup() {
             let canvas = createCanvas(windowWidth, windowHeight);
-            canvas.id('particleCanvas'); // Set canvas ID for CSS targeting
+            canvas.id('particleCanvas');
             for (let i = 0; i < nParticles; i++) {
                 particles.push(new Particle());
             }
         }
 
         function draw() {
-            // Set the background color to match the body's background
-            background(0); // Set to black
+            background(0);
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].display();
@@ -194,7 +200,7 @@
                 this.x += this.xSpeed;
                 this.y += this.ySpeed;
                 if (this.alpha < 0) {
-                    this.alpha = random(100, 150); // Reset particle alpha
+                    this.alpha = random(100, 150);
                     this.x = random(width);
                     this.y = height;
                 }
@@ -202,11 +208,10 @@
 
             display() {
                 noStroke();
-                // Change the fill color based on the particle's alpha value
                 if (this.alpha > 125) {
-                    fill(6, 216, 137, this.alpha); // Lighter green for light particles
+                    fill(6, 216, 137, this.alpha);
                 } else {
-                    fill(0, 128, 64, this.alpha); // Darker green for darker particles
+                    fill(0, 128, 64, this.alpha);
                 }
                 ellipse(this.x, this.y, this.radius);
             }
