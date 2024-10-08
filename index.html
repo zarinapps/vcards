@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #224154; /* Dark teal background */
+            background-color: #000000; /* Changed to pure black */
             color: #ffffff;
             font-family: 'Laila', sans-serif;
             overflow: hidden;
@@ -44,22 +44,23 @@
         .center-container {
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center vertically */
+            justify-content: flex-start; /* Align to the top */
             align-items: center; /* Center horizontally */
             height: 100%; /* Full height of the page */
             position: relative;
             z-index: 4; /* Highest z-index for content */
+            margin-top: 30px; /* Add a 30px gap from the top */
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px; /* Reduced margin for the heading */
+            margin-bottom: 20px;
             text-align: center;
             color: #06d889; /* Green heading */
         }
 
         .language-buttons {
-            margin: 5px; /* Reduced margin for buttons */
+            margin: 10px;
             display: flex;
         }
 
@@ -126,7 +127,7 @@
     <div class="center-container">
         <!-- Logo -->
         <img src="https://vc.zarin.solutions/zainlogolow.png" alt="Zarin Solutions Logo" class="logo" width="200" /> <!-- Logo image -->
-        <h1 id="dynamic-heading">آپ کا ڈیجیٹل کارڈ آپ کی جدید پہچان</h1>
+        <h1 id="dynamic-heading">ڈیجیٹل کارڈ کیا ہے؟</h1> <!-- Updated Heading in Urdu -->
         <div class="language-buttons">
             <button onclick="window.location.href='en.html'">English</button>
             <button onclick="window.location.href='ur.html'">اردو</button>
@@ -142,8 +143,8 @@
 
         // Auto-switch heading every 5 seconds
         const headings = [
-            "آپ کا ڈیجیٹل کارڈ آپ کی جدید پہچان", // Urdu
-            "Digital Card: Your Modern Identity" // English
+            "ڈیجیٹل کارڈ کیا ہے؟", // Urdu Question
+            "What is a Digital Card?" // English Question
         ];
         let currentIndex = 0;
 
@@ -171,7 +172,7 @@
 
         function draw() {
             // Set the background color to match the body's background
-            background(34, 65, 84);
+            background(0); // Set to black
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].display();
